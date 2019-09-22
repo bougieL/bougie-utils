@@ -1,3 +1,3 @@
-export * from "./date";
-export * from "./cloneDeep";
-export * from "./type";
+export * from './date'
+export * from './cloneDeep'
+export * from './type'

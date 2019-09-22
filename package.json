@@ -47,7 +47,7 @@
       "npm run format",
       "npm run docs:build",
       "npm run docs:deploy",
-      "git add"
+      "git add ."
     ]
   }
 }

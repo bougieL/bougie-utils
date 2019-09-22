@@ -1,5 +1,5 @@
 # cloneDeep
 
 ```js
-import { cloneDeep } from "@bougiel/utils";
+import { cloneDeep } from '@bougiel/utils'
 ```

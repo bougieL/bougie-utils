@@ -1,24 +1,24 @@
-const fs = require("fs-extra");
-const { exec, Log } = require("../config/_utils");
-const paths = require("../config/_paths");
+const fs = require('fs-extra')
+const { exec, Log } = require('../config/_utils')
+const paths = require('../config/_paths')
 
-main();
+main()
 
 const main = () => {
-  Log.info("release started.");
-  clean();
-  compileTS();
-  Log.success("release finished.");
-};
+  Log.info('release started.')
+  clean()
+  compileTS()
+  Log.success('release finished.')
+}
 
 function clean() {
-  fs.removeSync(paths.lib);
-  Log.success("clean cache success.");
+  fs.removeSync(paths.lib)
+  Log.success('clean cache success.')
 }
 
 function compileTS() {
-  exec(`${paths.binTSC} -p tsconfig.json`);
-  Log.success("compile ts success.");
+  exec(`${paths.binTSC} -p tsconfig.json`)
+  Log.success('compile ts success.')
 }
 
 function updateVersion() {}
