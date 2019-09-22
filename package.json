@@ -23,7 +23,7 @@
     "docs:build": "vuepress build docs",
     "docs:deploy": "gh-pages -d docs/.vuepress/dist",
     "release": "node scripts/release.js",
-    "format": "prettier --write {scripts,src}/**/*.{md,js,ts} --ignore-path .gitignore"
+    "format": "prettier --write {config,docs,scripts,src,tests}/**/*.{md,js,ts} --ignore-path .gitignore"
   },
   "devDependencies": {
     "chalk": "^2.4.2",

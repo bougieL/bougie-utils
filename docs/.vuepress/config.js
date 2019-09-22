@@ -1,11 +1,7 @@
 module.exports = {
   title: "Bougie's Utils",
   description: "Bougie's Utils",
-  locales: {
-    "/": {
-      lang: "zh-CN"
-    }
-  },
+  base: "/bougie-utils/",
   themeConfig: {
     logo: "//s2.ax1x.com/2019/04/27/EKF09s.png",
     nav: [
