@@ -21,7 +21,7 @@
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "docs:deploy": "gh-pages -d docs",
+    "docs:deploy": "gh-pages -d docs/.vuepress/dist",
     "release": "node scripts/release.js",
     "format": "prettier --write {scripts,src}/**/*.{md,js,ts} --ignore-path .gitignore"
   },
