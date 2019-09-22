@@ -1,0 +1,53 @@
+{
+  "name": "bougie-utils",
+  "version": "0.0.0",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "author": {
+    "name": "Bougie",
+    "email": "liuqi.hb.xiaogan@gmail.com",
+    "url": "https://www.bougieblog.cn"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bougieL/bougie-utils.git"
+  },
+  "homepage": "https://bougiel.github.io/bougie-utils/",
+  "license": "MIT",
+  "keywords": [
+    "util",
+    "utils"
+  ],
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "docs:deploy": "gh-pages -d docs",
+    "release": "node scripts/release.js",
+    "format": "prettier --write {scripts,src}/**/*.{md,js,ts} --ignore-path .gitignore"
+  },
+  "devDependencies": {
+    "chalk": "^2.4.2",
+    "fs-extra": "^8.1.0",
+    "gh-pages": "^2.1.1",
+    "husky": "^3.0.5",
+    "lint-staged": "^9.3.0",
+    "mocha": "^6.2.0",
+    "prettier": "^1.18.2",
+    "semver": "^6.3.0",
+    "typescript": "^3.6.3",
+    "vuepress": "^1.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{md,js,ts}": [
+      "npm run format",
+      "npm run docs:build",
+      "npm run docs:deploy",
+      "git add"
+    ]
+  }
+}
