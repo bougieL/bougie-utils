@@ -18,6 +18,6 @@ export const isArray = (obj: any) => toString(obj) === '[object Array]'
 
 export const isFunction = (obj: any) => toString(obj) === '[object Function]'
 
-function toString(obj: Object): string {
+function toString(obj: any): string {
   return Object.prototype.toString.call(obj)
 }

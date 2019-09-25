@@ -1,15 +1,18 @@
 const fs = require('fs-extra')
+const semver = require('semver')
 const { exec, Log } = require('../config/_utils')
 const paths = require('../config/_paths')
-
-main()
+const packageJson = require(paths.packageJson)
 
 const main = () => {
   Log.info('release started.')
   clean()
   compileTS()
+  updateVersion()
   Log.success('release finished.')
 }
+
+main()
 
 function clean() {
   fs.removeSync(paths.lib)
@@ -21,4 +24,12 @@ function compileTS() {
   Log.success('compile ts success.')
 }
 
-function updateVersion() {}
+function updateVersion() {
+  const newVersion = semver.inc(packageJson.version, 'minor')
+  const packageJsonContent = fs.readFileSync(paths.packageJson, 'utf8')
+  fs.writeFileSync(
+    paths.packageJson,
+    packageJsonContent.replace(/(?<=version.+)[\w\.]+/, newVersion)
+  )
+  Log.success('update version success.')
+}

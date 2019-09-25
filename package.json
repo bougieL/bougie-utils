@@ -1,6 +1,6 @@
 {
-  "name": "bougie-utils",
-  "version": "0.0.0",
+  "name": "@bougiel/utils",
+  "version": "0.43.0",
   "main": "lib/index.js",
   "module": "lib/index.js",
   "author": {
@@ -18,11 +18,21 @@
     "util",
     "utils"
   ],
+  "files": [
+    "lib",
+    "LICENSE",
+    "readme.md"
+  ],
+  "sideEffects": [
+    "./lib/type.js"
+  ],
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "docs:deploy": "gh-pages -d docs/.vuepress/dist",
-    "release": "node scripts/release.js",
+    "pretest": "node scripts/release.js",
+    "test": "mocha",
+    "prepack": "node scripts/release.js",
     "format": "prettier --write {config,docs,scripts,src,tests}/**/*.{md,js,ts} --ignore-path .gitignore"
   },
   "devDependencies": {
@@ -43,7 +53,11 @@
     }
   },
   "lint-staged": {
-    "*.{md,js,ts}": [
+    "*.{js,ts}": [
+      "npm run format",
+      "git add ."
+    ],
+    "*.{md}": [
       "npm run format",
       "npm run docs:build",
       "npm run docs:deploy",

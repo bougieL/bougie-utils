@@ -1,7 +1,7 @@
 const chalk = require('chalk')
 const execSync = require('child_process').execSync
 
-function exec(cmd) {
+const exec = (cmd) => {
   const stdout = execSync(cmd, {
     stdio: 'inherit'
   })
