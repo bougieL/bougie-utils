@@ -1,7 +1,7 @@
 import { isArray } from './type'
 
 /**
- *
+ * get deep nested object value
  *
  * @param {object} obj
  * @param {(string[] | string)} path

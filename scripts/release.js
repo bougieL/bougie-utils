@@ -20,7 +20,7 @@ function clean() {
 }
 
 function compileTS() {
-  exec(`${paths.binTSC} -p tsconfig.json`)
+  exec(`${paths.binTSC} -p ${paths.tsconfig}`)
   Log.success('compile ts success.')
 }
 

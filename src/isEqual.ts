@@ -1,5 +1,12 @@
 import { isArray, isObject } from './type'
 
+/**
+ * compare wheather two objects equal
+ *
+ * @param {*} source
+ * @param {*} target
+ * @returns {boolean}
+ */
 export const isEqual = (source: any, target: any): boolean => {
   if (source === target) {
     return true

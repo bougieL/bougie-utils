@@ -1,6 +1,6 @@
 /**
- *
- *
+ * compose multiple functions
+ * funcA(funcB(funcC(params))) => compose(funcA, funcB, funcC)(params)
  * @param {...Function[]} funcs
  * @returns
  */

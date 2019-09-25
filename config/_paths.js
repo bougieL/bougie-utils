@@ -6,5 +6,6 @@ module.exports = {
   src: join(root, 'src'),
   lib: join(root, 'lib'),
   packageJson: join(root, 'package.json'),
-  binTSC: join('node_modules', '.bin', 'tsc')
+  binTSC: join(root, 'node_modules', '.bin', 'tsc'),
+  tsconfig: join(root, 'tsconfig.json')
 }

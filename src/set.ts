@@ -1,5 +1,12 @@
 import { isArray } from './type'
 
+/**
+ * set deep nested object value
+ *
+ * @param {object} obj
+ * @param {(string[] | string)} path
+ * @param {*} value
+ */
 export const set = (obj: object, path: string[] | string, value: any): void => {
   let i
   path = isArray(path) ? path : (path as string).split('.')

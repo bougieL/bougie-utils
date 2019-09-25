@@ -1,16 +1,13 @@
 # 文档
 
-## cloneDeep
+## cloneDeep <Badge text='1.0.0+' />
 
 ```js
 import { cloneDeep } from '@bougiel/utils'
 ```
 
 - **说明**  
-  递归拷贝 value。
-
-- **添加版本**  
-  1.0.0
+  递归拷贝 value，仅克隆可枚举属性。
 
 - **类型**
 
@@ -33,7 +30,7 @@ const deep = cloneDeep(objects)
 assert.notStrictEqual(deep[0], objects[0])
 ```
 
-## compose
+## compose <Badge text='1.0.0+' />
 
 ```js
 import { compose } from '@bougiel/utils'
@@ -41,9 +38,6 @@ import { compose } from '@bougiel/utils'
 
 - **说明**  
   组合多个函数。
-
-- **添加版本**  
-  1.0.0
 
 - **类型**
 
@@ -69,7 +63,7 @@ compose(
 funcA(funcB(funcC(...params)))
 ```
 
-## dateFormat
+## dateFormat <Badge text='1.0.0+' />
 
 ```js
 import { dateFormat } from '@bougiel/utils'
@@ -77,9 +71,6 @@ import { dateFormat } from '@bougiel/utils'
 
 - **说明**  
   日期时间格式化。
-
-- **添加版本**  
-  1.0.0
 
 - **类型**
 
@@ -103,7 +94,7 @@ const formattedDate = dateFormat(1569888000000, 'yyyy/MM/dd hh:mm:ss')
 assert.strictEqual(formattedDate, '2019/10/01 08:00:00')
 ```
 
-## get
+## get <Badge text='1.0.0+' />
 
 ```js
 import { get } from '@bougiel/utils'
@@ -111,9 +102,6 @@ import { get } from '@bougiel/utils'
 
 - **说明**  
   根据索引获取对象的值。
-
-- **添加版本**  
-  1.0.0
 
 - **类型**
 
@@ -138,7 +126,7 @@ const value2 = get(obj, ['0', 'a', 'b', '0', 'c'])
 assert.ok(value1 === 1 && value2 === 1)
 ```
 
-## isEqual
+## isEqual <Badge text='1.0.0+' />
 
 ```js
 import { isEqual } from '@bougiel/utils'
@@ -146,9 +134,6 @@ import { isEqual } from '@bougiel/utils'
 
 - **说明**  
   判断两个对象是否相等。
-
-- **添加版本**  
-  1.0.0
 
 - **类型**
 
@@ -173,7 +158,7 @@ assert.ok(obj1 !== obj2)
 assert.ok(isEqual(obj1, obj2))
 ```
 
-## set
+## set <Badge text='1.0.0+' />
 
 ```js
 import { set } from '@bougiel/utils'
@@ -181,9 +166,6 @@ import { set } from '@bougiel/utils'
 
 - **说明**  
   设置深层对象 value。
-
-- **添加版本**  
-  1.0.0
 
 - **类型**
 
@@ -211,7 +193,7 @@ set(obj, ['0', 'a', 'b', '0', 'c'], 3)
 assert.strictEqual(obj[0].a.b[0].c, 3)
 ```
 
-## webpackMerge
+## webpackMerge <Badge text='1.0.0+' />
 
 ```js
 import { webpackMerge } from '@bougiel/utils'
@@ -223,9 +205,6 @@ webpackMerge 会修改 base 对象。如果不想修改 base 对象，请先将 
 
 - **说明**  
   合并两个对象。
-
-- **添加版本**  
-  1.0.0
 
 - **类型**
 
