@@ -1,5 +1,5 @@
 const assert = require('assert')
-const { compose } = require('../lib/compose')
+const { compose } = require('../lib')
 
 describe('compose', () => {
   it('should result equal when compose functions', () => {
