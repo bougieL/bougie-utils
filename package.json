@@ -1,6 +1,6 @@
 {
   "name": "@bougiel/utils",
-  "version": "0.64.0",
+  "version": "0.71.0",
   "main": "lib/index.js",
   "module": "lib/index.js",
   "author": {
@@ -33,7 +33,7 @@
     "pretest": "node scripts/release.js",
     "test": "mocha",
     "prepack": "node scripts/release.js",
-    "format": "prettier --write {config,docs,scripts,src,tests}/**/*.{md,js,ts} --ignore-path .gitignore"
+    "format": "prettier --write {config,docs,scripts,src,test}/**/*.{md,js,ts} --ignore-path .gitignore"
   },
   "devDependencies": {
     "chalk": "^2.4.2",

@@ -30,12 +30,13 @@ npm i @bougiel/utils -S
 :::
 
 ```js
-import { cloneDeep, compose, dateFormat } from '@bougiel/utils'
+import { Binder, cloneDeep, compose, dateFormat } from '@bougiel/utils'
 ```
 
 - **从文件引入**
 
 ```js
+import { Binder } from '@bougiel/utils/lib/Binder'
 import { cloneDeep } from '@bouigel/utils/lib/cloneDeep'
 import { compose } from '@bouigel/utils/lib/compose'
 import { dateFormat } from '@bouigel/utils/lib/dateFormat'

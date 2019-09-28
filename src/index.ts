@@ -1,3 +1,4 @@
+export * from './Binder'
 export * from './cloneDeep'
 export * from './compose'
 export * from './dateFormat'

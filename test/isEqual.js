@@ -18,7 +18,7 @@ describe('isEqual', () => {
     it('should return true when compare deep equal objects', () => {
       assert.ok(isEqual(obj1, obj3))
     })
-    it('should return false whem compare not deep equal objects', () => {
+    it('should return false when compare not deep equal objects', () => {
       assert.ok(!isEqual(obj1, obj2))
     })
     it('should return false when compare array and object', () => {

@@ -1,5 +1,51 @@
 # 文档
 
+## Binder <Badge text='Class' type='warn' /><Badge text='1.0.0+' />
+
+```js
+import { Binder } from '@bougiel/utils'
+```
+
+- **说明**  
+  React 受控表单绑定器。
+
+- **类型**
+
+```ts
+interface IComponentInstance {
+  state: object
+  setState: (obj: object) => void
+}
+```
+
+- **构造器参数**  
+  _`componentInstance: IComponentInstance`_: 组件`this`实例。
+
+- **实例方法**
+
+  - _`value(prop: string)`_: 绑定 `value` 和 `onChange` 属性。
+  - _`checked(prop: string)`_: 绑定 `checked` 和 `onChange` 属性。
+
+- **示例**
+
+```js
+class Form extends React.Component {
+  binder = new Binder(this)
+  state = {
+    value: '',
+    checked: ''
+  }
+  render() {
+    return (
+      <form>
+        <input {...this.binder.value('value')} />
+        <input type="checkbox" {...this.binder.checked('checked')} />
+      </form>
+    )
+  }
+}
+```
+
 ## cloneDeep <Badge text='1.0.0+' />
 
 ```js
@@ -94,6 +140,34 @@ const formattedDate = dateFormat(1569888000000, 'yyyy/MM/dd hh:mm:ss')
 assert.strictEqual(formattedDate, '2019/10/01 08:00:00')
 ```
 
+## debounce <Badge text='1.0.0+' />
+
+```js
+import { debounce } from '@bougiel/utils'
+```
+
+- **说明**  
+  防抖一个函数。
+
+- **类型**
+
+```ts
+declare const debounce: (func: Function, interval: number) => Function
+```
+
+- **参数**  
+  _`func: Function`_: 需要防抖的函数。  
+  _`interval: number`_: 等待时间。
+
+- **返回**  
+  _`Function`_: 防抖动的函数。
+
+- **示例**
+
+```js
+window.addEventListener('resize', debounce(calcLayout, 200))
+```
+
 ## get <Badge text='1.0.0+' />
 
 ```js
@@ -133,7 +207,7 @@ import { isEqual } from '@bougiel/utils'
 ```
 
 - **说明**  
-  判断两个对象是否相等。
+  判断两个对象是否相等，仅对比可枚举属性。
 
 - **类型**
 
@@ -191,6 +265,34 @@ assert.strictEqual(obj[0].a.b[0].c, 2)
 
 set(obj, ['0', 'a', 'b', '0', 'c'], 3)
 assert.strictEqual(obj[0].a.b[0].c, 3)
+```
+
+## throttle <Badge text='1.0.0+' />
+
+```js
+import { throttle } from '@bougiel/utils'
+```
+
+- **说明**  
+  节流一个函数。
+
+- **类型**
+
+```ts
+declare const throttle: (func: Function, interval: number) => Function
+```
+
+- **参数**  
+  _`func: Function`_: 需要节流的函数。  
+  _`interval: number`_: 多久时间执行一次。
+
+- **返回**  
+  _`Function`_: 节流后的函数。
+
+- **示例**
+
+```js
+window.addEventListener('resize', throttle(calcLayout, 200))
 ```
 
 ## webpackMerge <Badge text='1.0.0+' />
