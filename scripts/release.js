@@ -8,7 +8,7 @@ const main = () => {
   Log.info('release started.')
   clean()
   compileTS()
-  updateVersion()
+  // updateVersion()
   Log.success('release finished.')
 }
 
