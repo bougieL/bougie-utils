@@ -1,6 +1,6 @@
 # 文档
 
-## Binder <Badge text='Class' type='warn' /><Badge text='1.0.0+' />
+## Binder <Badge text='Class' type='warn' />
 
 ```js
 import { Binder } from '@bougiel/utils'
@@ -46,7 +46,7 @@ class Form extends React.Component {
 }
 ```
 
-## cloneDeep <Badge text='1.0.0+' />
+## cloneDeep
 
 ```js
 import { cloneDeep } from '@bougiel/utils'
@@ -76,7 +76,7 @@ const deep = cloneDeep(objects)
 assert.notStrictEqual(deep[0], objects[0])
 ```
 
-## compose <Badge text='1.0.0+' />
+## compose
 
 ```js
 import { compose } from '@bougiel/utils'
@@ -109,7 +109,7 @@ compose(
 funcA(funcB(funcC(...params)))
 ```
 
-## dateFormat <Badge text='1.0.0+' />
+## dateFormat
 
 ```js
 import { dateFormat } from '@bougiel/utils'
@@ -140,7 +140,7 @@ const formattedDate = dateFormat(1569888000000, 'yyyy/MM/dd hh:mm:ss')
 assert.strictEqual(formattedDate, '2019/10/01 08:00:00')
 ```
 
-## debounce <Badge text='1.0.0+' />
+## debounce
 
 ```js
 import { debounce } from '@bougiel/utils'
@@ -168,7 +168,44 @@ declare const debounce: (func: Function, interval: number) => Function
 window.addEventListener('resize', debounce(calcLayout, 200))
 ```
 
-## get <Badge text='1.0.0+' />
+## EventEmitter <Badge text='Class' type='warn' /><Badge text='1.1.0+' />
+
+```js
+import { EventEmitter } from '@bougiel/utils'
+```
+
+- **说明**  
+  发布订阅事件中心。
+
+- **类型**
+
+```ts
+interface IInitialEvents {
+  [name: string]: Function
+}
+```
+
+- **构造器参数**  
+  _`initialEvents: IInitialEvents`_: 默认初始化事件。
+
+- **实例方法**
+
+  - _`on(name: string, func: Function)`_: 添加一个事件监听，返回一个包含 `remove` 方法的对象。
+  - _`un(name: string)`_: 删除一个监听。
+  - _`clear()`_: 删除所有监听。
+  - _`emit(name: string, ...params: any[])`_: 触发一个事件监听。
+
+- **示例**
+
+```js
+const emitter = new EventEmitter({
+  foo: (...params) => params,
+  bar: (param) => param
+})
+assert.deepStrictEqual(emitter.emit('foo', 1, 2, 3), [1, 2, 3])
+```
+
+## get
 
 ```js
 import { get } from '@bougiel/utils'
@@ -200,7 +237,7 @@ const value2 = get(obj, ['0', 'a', 'b', '0', 'c'])
 assert.ok(value1 === 1 && value2 === 1)
 ```
 
-## isEqual <Badge text='1.0.0+' />
+## isEqual
 
 ```js
 import { isEqual } from '@bougiel/utils'
@@ -232,7 +269,7 @@ assert.ok(obj1 !== obj2)
 assert.ok(isEqual(obj1, obj2))
 ```
 
-## set <Badge text='1.0.0+' />
+## set
 
 ```js
 import { set } from '@bougiel/utils'
@@ -267,7 +304,7 @@ set(obj, ['0', 'a', 'b', '0', 'c'], 3)
 assert.strictEqual(obj[0].a.b[0].c, 3)
 ```
 
-## throttle <Badge text='1.0.0+' />
+## throttle
 
 ```js
 import { throttle } from '@bougiel/utils'
@@ -295,7 +332,7 @@ declare const throttle: (func: Function, interval: number) => Function
 window.addEventListener('resize', throttle(calcLayout, 200))
 ```
 
-## webpackMerge <Badge text='1.0.0+' />
+## webpackMerge
 
 ```js
 import { webpackMerge } from '@bougiel/utils'
