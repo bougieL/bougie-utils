@@ -269,6 +269,96 @@ assert.ok(obj1 !== obj2)
 assert.ok(isEqual(obj1, obj2))
 ```
 
+## ResizeObserve <Badge text='Class' type='warn' /><Badge text='1.2.0+' />
+
+```js
+import { ResizeObserve } from '@bougiel/utils'
+```
+
+- **说明**  
+  窗口 resize 监听器，使用发布订阅优化设立一个监听器，优化性能。
+
+- **构造器参数**  
+  _`delay: number`_: 防抖时间，默认为 300ms。
+
+- **实例方法**
+
+  - _`subscribe(func: Function): number`_: 订阅 resize 事件，`func` 回调值为当前窗口宽度，返回一个 `subscribeId`。
+  - _`unsubscribe(subscribeId: number): void`_: 根据 `subscribeId` 取消订阅。
+
+- **示例**
+
+```js
+const resizeObserve = new ResizeObserve()
+
+function App() {
+  useEffect(() => {
+    const subscribeId = resizeObserve.subscribe(handleWindowResize)
+    return () => {
+      resizeObserve.unsubscribe(subscribeId)
+    }
+  }, [])
+  return <App />
+}
+```
+
+## ResponsiveObserve <Badge text='Class' type='warn' /><Badge text='1.2.0+' />
+
+```js
+import { ResponsiveObserve } from '@bougiel/utils'
+```
+
+- **说明**  
+  媒体查询器，使用 `window.matchMedia` 判断当前设备尺寸，采用发布订阅模式仅设立一个原生监听器，优化性能。
+
+- **类型**
+
+```ts
+interface IResponsiveMap {
+  xs?: string
+  sm?: string
+  md?: string
+  lg?: string
+  xl?: string
+  xxl?: string
+}
+```
+
+- **构造器参数**  
+  _`responsiveMap: IResponsiveMap`_: 响应式尺寸。默认为：
+
+  ```ts
+  const defaultResponsiveMap = {
+    xs: '(max-width: 576px)',
+    sm: '(min-wdth: 576px)',
+    md: '(min-width: 768px)',
+    lg: '(min-width: 992px)',
+    xl: '(min-width: 1200px)',
+    xxl: '(min-width: 1600px)'
+  }
+  ```
+
+- **实例方法**
+
+  - _`subscribe(func: Function): number`_: 订阅设备尺寸变化事件，`func` 回调值为当前窗口尺寸类型，返回一个 `subscribeId`。
+  - _`unsubscribe(subscribeId: number): void`_: 根据 `subscribeId` 取消订阅。
+
+- **示例**
+
+```js
+const responsiveObserve = new ResponsiveObserve()
+
+function App() {
+  useEffect(() => {
+    const subscribeId = responsiveObserve.subscribe(handleWindowResize)
+    return () => {
+      responsiveObserve.unsubscribe(subscribeId)
+    }
+  }, [])
+  return <App />
+}
+```
+
 ## set
 
 ```js
