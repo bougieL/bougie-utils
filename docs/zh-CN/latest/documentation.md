@@ -237,6 +237,33 @@ const value2 = get(obj, ['0', 'a', 'b', '0', 'c'])
 assert.ok(value1 === 1 && value2 === 1)
 ```
 
+## getHostIP
+
+```js
+import { getHostIP } from '@bougiel/utils'
+```
+
+- **说明**  
+  获取本机 IP，适用于 Node 端。
+
+- **类型**
+
+```ts
+export declare const getHostIP: () => string | undefined
+```
+
+- **返回**  
+  _`string | undefined`_: 本机 IP。
+
+- **示例**
+
+```js
+const IP = getHostIP()
+const PORT = Number.parseInt(process.env.PORT) || 3000
+// ...
+console.log(`Your app is running at: http://${IP}:${PORT}`)
+```
+
 ## isEqual
 
 ```js
