@@ -16,11 +16,13 @@ main()
 
 function clean() {
   fs.removeSync(paths.lib)
+  fs.removeSync(paths.libES)
   Log.success('clean cache success.')
 }
 
 function compileTS() {
   exec(`${paths.binTSC} -p ${paths.tsconfig}`)
+  exec(`${paths.binTSC} -p ${paths.tsconfigES}`)
   Log.success('compile ts success.')
 }
 
