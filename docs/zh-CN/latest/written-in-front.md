@@ -41,3 +41,10 @@ import { cloneDeep } from '@bouigel/utils/lib/cloneDeep'
 import { compose } from '@bouigel/utils/lib/compose'
 import { dateFormat } from '@bouigel/utils/lib/dateFormat'
 ```
+
+## 注意
+
+- 标注 <Badge text='Node' /> 只在 Node 环境下可用
+- 标注 <Badge text='Dom' /> 只在浏览器环境下可用
+- 标注 <Badge text='Class' type='warn' /> 的为类方法，需要实例化后使用
+- 标注版本的只在大于等于标注版本的包中可用

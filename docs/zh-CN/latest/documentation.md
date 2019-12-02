@@ -237,7 +237,7 @@ const value2 = get(obj, ['0', 'a', 'b', '0', 'c'])
 assert.ok(value1 === 1 && value2 === 1)
 ```
 
-## getHostIP
+## getHostIP <Badge text='Node' />
 
 ```js
 import { getHostIP } from '@bougiel/utils'
@@ -296,7 +296,7 @@ assert.ok(obj1 !== obj2)
 assert.ok(isEqual(obj1, obj2))
 ```
 
-## ResizeObserve <Badge text='Class' type='warn' /><Badge text='1.2.0+' />
+## ResizeObserve <Badge text='Class' type='warn' /><Badge text='1.2.0+' /><Badge text='Dom' />
 
 ```js
 import { ResizeObserve } from '@bougiel/utils'
@@ -329,7 +329,7 @@ function App() {
 }
 ```
 
-## ResponsiveObserve <Badge text='Class' type='warn' /><Badge text='1.2.0+' />
+## ResponsiveObserve <Badge text='Class' type='warn' /><Badge text='1.2.0+' /><Badge text='Dom' />
 
 ```js
 import { ResponsiveObserve } from '@bougiel/utils'
