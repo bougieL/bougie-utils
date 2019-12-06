@@ -1,8 +1,8 @@
 const assert = require('assert')
-const { compose } = require('../lib')
+const { checkIsPortInUse } = require('../lib')
 
-describe('compose', () => {
-  it('should result equal when compose functions', () => {
+describe('checkIsPortInUse', () => {
+  it('should resolve when port unused', async () => {
     const func = (n) => n + 1
     const source = func(func(func(1)))
     const target = compose(func, func, func)(1)

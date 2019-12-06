@@ -24,9 +24,6 @@
     "LICENSE",
     "readme.md"
   ],
-  "sideEffects": [
-    "./lib/type.js"
-  ],
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
@@ -37,16 +34,16 @@
     "format": "prettier --write {config,docs,scripts,src,test}/**/*.{md,js,ts} --ignore-path .gitignore"
   },
   "devDependencies": {
-    "chalk": "^2.4.2",
+    "chalk": "^3.0.0",
     "fs-extra": "^8.1.0",
     "gh-pages": "^2.1.1",
-    "husky": "^3.0.5",
-    "lint-staged": "^9.3.0",
-    "mocha": "^6.2.0",
-    "prettier": "^1.18.2",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "mocha": "^6.2.2",
+    "prettier": "^1.19.1",
     "semver": "^6.3.0",
-    "typescript": "^3.6.3",
-    "vuepress": "^1.1.0"
+    "typescript": "^3.7.3",
+    "vuepress": "^1.2.0"
   },
   "husky": {
     "hooks": {

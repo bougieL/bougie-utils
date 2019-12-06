@@ -12,24 +12,16 @@ const exec = (cmd) => {
 
 class Log {
   static info(m) {
-    console.log(
-      chalk.default.gray(`[${now()}]`) + '  🚙    ' + chalk.default.blue(m)
-    )
+    console.log(chalk.gray(`[${now()}]`) + '  🚙    ' + chalk.blue(m))
   }
   static warnning(m) {
-    console.log(
-      chalk.default.gray(`[${now()}]`) + '  🚕    ' + chalk.default.yellow(m)
-    )
+    console.log(chalk.gray(`[${now()}]`) + '  🚕    ' + chalk.yellow(m))
   }
   static error(m) {
-    console.log(
-      chalk.default.gray(`[${now()}]`) + '  🚗    ' + chalk.default.red(m)
-    )
+    console.log(chalk.gray(`[${now()}]`) + '  🚗    ' + chalk.red(m))
   }
   static success(m) {
-    console.log(
-      chalk.default.gray(`[${now()}]`) + '  🚖    ' + chalk.default.green(m)
-    )
+    console.log(chalk.gray(`[${now()}]`) + '  🚖    ' + chalk.green(m))
   }
 }
 
