@@ -1,5 +1,5 @@
 export * from './Binder'
-export * from './checkIsPortInUse'
+export * from './checkIsPortUnUsed'
 export * from './cloneDeep'
 export * from './compose'
 export * from './dateFormat'

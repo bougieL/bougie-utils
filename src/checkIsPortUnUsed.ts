@@ -5,22 +5,23 @@ interface ICheckIsPortInUseOption {
   host?: string
 }
 
-export const checkIsPortInUse = (
+export const checkIsPortUnUsed = (
   port: number,
   { timeout = 1000, host = '127.0.0.1' }: ICheckIsPortInUseOption = {}
 ) => {
   return new Promise((resolve, reject) => {
     const socket = new net.Socket()
-    const onError = () => {
+    const onError = (error: Error) => {
       socket.destroy()
-      reject()
+      resolve(false)
+      reject(error)
     }
     socket.setTimeout(timeout)
     socket.once('error', onError)
     socket.once('timeout', onError)
     socket.connect(port, host, () => {
       socket.end()
-      resolve()
+      resolve(true)
     })
   })
 }
