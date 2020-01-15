@@ -100,11 +100,7 @@ declare const compose: (...funcs: Function[]) => Function
 - **示例**
 
 ```js
-compose(
-  funcA,
-  funcB,
-  funcC
-)(...params)
+compose(funcA, funcB, funcC)(...params)
 // equal
 funcA(funcB(funcC(...params)))
 ```
@@ -303,7 +299,7 @@ import { ResizeObserve } from '@bougiel/utils'
 ```
 
 - **说明**  
-  窗口 resize 监听器，使用发布订阅优化设立一个监听器，优化性能。
+  窗口 resize 监听器，使用发布订阅模式仅设立一个监听器，优化性能。
 
 - **构造器参数**  
   _`delay: number`_: 防抖时间，默认为 300ms。
@@ -336,7 +332,7 @@ import { ResponsiveObserve } from '@bougiel/utils'
 ```
 
 - **说明**  
-  媒体查询器，使用 `window.matchMedia` 判断当前设备尺寸，采用发布订阅模式仅设立一个原生监听器，优化性能。
+  媒体查询器，使用 `window.matchMedia` 判断当前设备尺寸，采用发布订阅模式仅设立一个监听器，优化性能。
 
 - **类型**
 
@@ -380,6 +376,40 @@ function App() {
     const subscribeId = responsiveObserve.subscribe(handleWindowResize)
     return () => {
       responsiveObserve.unsubscribe(subscribeId)
+    }
+  }, [])
+  return <App />
+}
+```
+
+## ScrollObserve <Badge text='Class' type='warn' /><Badge text='1.4.0+' /><Badge text='Dom' />
+
+```js
+import { ScrollObserve } from '@bougiel/utils'
+```
+
+- **说明**  
+  元素滚动事件监听器，使用发布订阅模式仅设立一个监听器，优化性能。
+
+- **构造器参数**
+  _`attachElement: Element | Document`: 绑定事件的元素，默认为 `document`。
+  _`delay: number`\_: 防抖时间，默认为 300ms。
+
+- **实例方法**
+
+  - _`subscribe(func: Function): number`_: 订阅 `scroll` 事件，`func` 回调值为当前事件绑定元素中滚动子元素的 `scollTop`。返回一个 `subscribeId`。
+  - _`unsubscribe(subscribeId: number): void`_: 根据 `subscribeId` 取消订阅。
+
+- **示例**
+
+```js
+const scrollObserve = new ScrollObserve()
+
+function App() {
+  useEffect(() => {
+    const subscribeId = scrollObserve.subscribe(handleDocumentScroll)
+    return () => {
+      scrollObserve.unsubscribe(subscribeId)
     }
   }, [])
   return <App />
