@@ -10,7 +10,7 @@ export class ScrollObserve {
     delay: number = 300
   ) {
     this.attachElement = attachElement
-    this.debouncedDispatch = debounce(this.dispatch, delay) as (
+    this.debouncedDispatch = debounce(this.dispatch.bind(this), delay) as (
       event: UIEvent
     ) => void
   }
@@ -32,6 +32,8 @@ export class ScrollObserve {
     }
     this.subscribeId++
     this.subscribers.set(this.subscribeId, func)
+    const child = this.attachElement.firstElementChild
+    func(child ? child.scrollTop : 0)
     return this.subscribeId
   }
   public unsubscribe(subscribeId: number) {

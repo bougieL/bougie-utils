@@ -1,6 +1,6 @@
 {
   "name": "@bougiel/utils",
-  "version": "1.4.0",
+  "version": "1.4.8",
   "main": "lib/index.js",
   "module": "es/index.js",
   "author": {
@@ -61,5 +61,6 @@
       "npm run docs:deploy",
       "git add ."
     ]
-  }
+  },
+  "dependencies": {}
 }

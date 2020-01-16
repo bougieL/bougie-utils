@@ -5,7 +5,7 @@ export class ResizeObserve {
   private subscribeId = -1
   private debouncedDispatch: (event: UIEvent) => void
   constructor(delay: number = 300) {
-    this.debouncedDispatch = debounce(this.dispatch, delay) as (
+    this.debouncedDispatch = debounce(this.dispatch.bind(this), delay) as (
       event: UIEvent
     ) => void
   }
