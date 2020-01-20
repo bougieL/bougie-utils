@@ -265,6 +265,10 @@ assert.ok(obj1 !== obj2)
 assert.ok(isEqual(obj1, obj2))
 ```
 
+## objectMerge <Badge text='1.5.0+' />
+
+同 [`webpackMerge`](#webpackMerge)
+
 ## ResizeObserve <Badge text='Class' type='warn' /><Badge text='1.2.0+' /><Badge text='Dom' />
 
 ```js

@@ -2,7 +2,7 @@
 home: true
 heroImage: https://s2.ax1x.com/2019/09/25/uVhvRS.png
 heroText: Bougie's Utils
-tagline: 自用的工具函数库
+tagline: 前端工具集
 actionText: 查看文档
 actionLink: /zh-CN/latest/written-in-front
 permalink: /
