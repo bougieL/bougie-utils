@@ -1,6 +1,6 @@
 {
   "name": "@bougiel/utils",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "main": "lib/index.js",
   "module": "es/index.js",
   "author": {
@@ -24,6 +24,7 @@
     "LICENSE",
     "readme.md"
   ],
+  "sideEffects": false,
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
@@ -37,12 +38,12 @@
     "chalk": "^3.0.0",
     "fs-extra": "^8.1.0",
     "gh-pages": "^2.2.0",
-    "husky": "^4.0.9",
-    "lint-staged": "^9.5.0",
+    "husky": "^4.0.10",
+    "lint-staged": "^10.0.0",
     "mocha": "^7.0.0",
     "prettier": "^1.19.1",
     "semver": "^7.1.1",
-    "typescript": "^3.7.4",
+    "typescript": "^3.7.5",
     "vuepress": "^1.2.0"
   },
   "husky": {
