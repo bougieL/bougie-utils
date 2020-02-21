@@ -12,7 +12,7 @@
 
 ## 1.5.2
 
-- 🔧 修复：`ResizeObserve` 订阅时不触发的问题。
+- 🔧 修复：`ResizeObserve` 订阅时不触发的问题（[533cb47](https://github.com/bougieL/bougie-utils/commit/533cb47a9e735b4eb8f6fb0578fdd2c27d8f8ce8)）。
 
 ## 1.5.0
 
