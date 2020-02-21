@@ -26,6 +26,7 @@ export class ResizeObserve {
     }
     this.subscribeId++
     this.subscribers.set(this.subscribeId, func)
+    func(window.innerWidth)
     return this.subscribeId
   }
   public unsubscribe(subscribeId: number) {

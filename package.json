@@ -1,6 +1,6 @@
 {
   "name": "@bougiel/utils",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "main": "lib/index.js",
   "module": "es/index.js",
   "author": {
